@@ -10,11 +10,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 class JpaApplicationTests {
 
     @Autowired
@@ -23,6 +26,7 @@ class JpaApplicationTests {
     private MessageRepository messageRepository;
 
     @Test
+    @Rollback
     public void test() throws Exception {
         userRepository.save(new User("aaa", 10));
         userRepository.save(new User("bbb", 20));

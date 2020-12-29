@@ -1,18 +1,18 @@
-package com.example.mybatis.entity;
+package com.example.mybatis.secondary;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class User {
+public class UserSecondary {
 
     private Long id;
 
     private String name;
     private Integer age;
 
-    public User(String name, Integer age) {
+    public UserSecondary(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
